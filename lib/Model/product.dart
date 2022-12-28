@@ -1,3 +1,5 @@
+import 'package:flutter_shopping/db/db_helper.dart';
+
 List<String> productName = ['Mango' , 'Orange' , 'Grapes' , 'Banana' , 'Chery' , 'Peach','Mixed Fruit Basket',] ;
 List<String> productUnit = ['KG' , 'Dozen' , 'KG' , 'Dozen' , 'KG' , 'KG','KG',] ;
 List<int> productPrice = [10, 20 , 30 , 40 , 50, 60 , 70 ] ;

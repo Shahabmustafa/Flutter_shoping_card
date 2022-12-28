@@ -1,45 +1,44 @@
-class Card{
-  late final int? id;
-  final String? productId;
-  final String? productName;
-  final int? initialPrice;
-  final int? productPrice;
-  final int? quantity;
-  final String? unitTag;
-  final String? image;
+class Cart {
+  int? id;
+  String? productId;
+  String? productName;
+  int? initialPrice;
+  int? productPrice;
+  int? quantity;
+  String? unitTag;
+  String? image;
 
-  Card({
-    required this.id,
-    required this.productId,
-    required this.productName,
-    required this.initialPrice,
-    required this.productPrice,
-    required this.quantity,
-    required this.unitTag,
-    required this.image,
-});
+  Cart(
+      {this.id,
+        this.productId,
+        this.productName,
+        this.initialPrice,
+        this.productPrice,
+        this.quantity,
+        this.unitTag,
+        this.image});
 
-  Card.fromMap(Map<dynamic,dynamic>res)
-  : id = res['id'],
-        productId = res['productId'],
-        productName = res['productName'],
-        initialPrice = res['initialPrice'],
-        productPrice = res['productPrice'],
-        quantity = res['quantity'],
-        unitTag = res['unitTag'],
-        image = res['image']
+  Cart.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    productId = json['productId'];
+    productName = json['productName'];
+    initialPrice = json['initialPrice'];
+    productPrice = json['productPrice'];
+    quantity = json['quantity'];
+    unitTag = json['unitTag'];
+    image = json['image'];
+  }
 
-  Map<String,object?>toMap(){
-    return {
-      'id': id,
-      'productId' : productId,
-      'productName' : productName,
-      'initialPrice' : initialPrice,
-      'productPrice' : productPrice,
-      'quantity' : quantity,
-      'unitTag' : unitTag,
-      'image' : image
-    };
-
+  Map<String, dynamic> toMap() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['productId'] = this.productId;
+    data['productName'] = this.productName;
+    data['initialPrice'] = this.initialPrice;
+    data['productPrice'] = this.productPrice;
+    data['quantity'] = this.quantity;
+    data['unitTag'] = this.unitTag;
+    data['image'] = this.image;
+    return data;
   }
 }
